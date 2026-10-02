@@ -3,8 +3,8 @@ import tempfile
 import os
 from datetime import datetime
 
-from ocr_engine import extract_text
-from llm_engine import explain_document
+from backend.ocr_engine import extract_text
+from backend.llm_engine import explain_document
 
 st.set_page_config(
     page_title="Second Opinion",
@@ -201,6 +201,9 @@ if "doc_time" not in st.session_state:
     st.session_state.doc_time = None
 if "pending_question" not in st.session_state:
     st.session_state.pending_question = None
+if "patient_memory" not in st.session_state:
+    from backend.llm_engine import PatientMemory
+    st.session_state.patient_memory = PatientMemory()
 
 # =========================================================
 # SIDEBAR
@@ -230,10 +233,16 @@ with st.sidebar:
                     st.session_state.doc_name = uploaded_file.name
                     st.session_state.doc_time = datetime.now().strftime("%I:%M %p")
                     st.session_state.chat_history = []
+                    st.session_state.patient_memory.add_fact(
+                    f"Report from {st.session_state.doc_time}: {text[:150]}..."
+                    )
                     st.rerun()
                 except Exception as e:
                     st.error(f"Couldn't read this file: {e}")
         os.unlink(tmp_path)
+
+    with st.expander("🔍 Debug: Patient Memory"):
+        st.write(st.session_state.patient_memory.facts)
 
     if st.session_state.doc_name:
         st.markdown('<div class="so-section-label">Current document</div>', unsafe_allow_html=True)
@@ -326,7 +335,12 @@ if final_question:
 
     with st.chat_message("assistant"):
         with st.spinner("Reading your report and thinking…"):
-            answer = explain_document(st.session_state.extracted_text, question_to_use)
+            answer = explain_document(
+            st.session_state.extracted_text,
+            st.session_state.chat_history,
+            question_to_use,
+            patient_memory=st.session_state.patient_memory
+            )
         st.write(answer)
 
     st.session_state.chat_history.append(("assistant", answer))

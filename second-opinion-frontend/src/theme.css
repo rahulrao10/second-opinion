@@ -1,0 +1,33 @@
+:root {
+  --bg: #F6F7F5;
+  --surface: #FFFFFF;
+  --surface-2: #EEF1EE;
+  --ink: #1B2B26;
+  --ink-muted: #6B7A72;
+  --accent: #2F6FED;
+  --accent-dim: #E6EDFC;
+  --line: #E3E7E2;
+  --danger: #D9534F;
+  --success: #3BA776;
+}
+
+[data-theme="dark"] {
+  --bg: #0C1116;
+  --surface: #151B22;
+  --surface-2: #1B222B;
+  --ink: #E7EAEE;
+  --ink-muted: #8B96A3;
+  --accent: #5B9BFF;
+  --accent-dim: #1F2E45;
+  --line: #262E38;
+  --danger: #E57373;
+  --success: #4ADE80;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  transition: background 0.2s ease, color 0.2s ease;
+}

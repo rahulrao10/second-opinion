@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pytesseract
+pillow
+pdf2image
+ollama
+scikit-learn

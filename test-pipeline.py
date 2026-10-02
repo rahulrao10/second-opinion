@@ -1,5 +1,5 @@
-from ocr_engine import extract_text
-from llm_engine import explain_document
+from backend.ocr_engine import extract_text
+from backend.llm_engine import explain_document
 
 # Step 1: Extract text from the report using OCR
 filepath = "report1.jpg"
