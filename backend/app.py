@@ -7,7 +7,7 @@ from backend.ocr_engine import extract_text
 from backend.llm_engine import explain_document
 
 st.set_page_config(
-    page_title="Second Opinion",
+    page_title="CareChat",
     page_icon="🩺",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -43,26 +43,26 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; color: va
     border-right: 1px solid var(--line);
 }
 [data-testid="stSidebar"] * { color: var(--ink); }
-[data-testid="stSidebar"] .so-wordmark {
+[data-testid="stSidebar"] .cc-wordmark {
     font-family: 'Source Serif 4', serif;
     font-weight: 600;
     font-size: 1.5rem;
     color: #FFFFFF;
     margin-bottom: 0.2rem;
 }
-[data-testid="stSidebar"] .so-wordmark span { color: var(--accent); font-style: italic; font-weight: 500; }
-[data-testid="stSidebar"] .so-badge {
+[data-testid="stSidebar"] .cc-wordmark span { color: var(--accent); font-style: italic; font-weight: 500; }
+[data-testid="stSidebar"] .cc-badge {
     display: inline-flex; align-items: center; gap: 0.4rem;
     background: var(--surface);
     border: 1px solid var(--line);
     padding: 0.25rem 0.65rem; border-radius: 999px;
     font-size: 0.72rem; margin-bottom: 1.6rem; color: var(--ink-muted);
 }
-[data-testid="stSidebar"] .so-badge::before {
+[data-testid="stSidebar"] .cc-badge::before {
     content: ""; width: 6px; height: 6px; border-radius: 50%;
     background: #4ADE80; display: inline-block;
 }
-[data-testid="stSidebar"] .so-section-label {
+[data-testid="stSidebar"] .cc-section-label {
     font-size: 0.72rem; letter-spacing: 0.03em;
     color: var(--ink-muted); margin: 1.4rem 0 0.5rem 0;
     text-transform: uppercase;
@@ -85,7 +85,7 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; color: va
     border-radius: 8px;
 }
 
-.so-doc-chip {
+.cc-doc-chip {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -94,8 +94,8 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; color: va
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
-.so-doc-chip .fname { font-weight: 500; color: #FFFFFF; }
-.so-doc-chip .ftime { color: var(--ink-muted); font-size: 0.74rem; }
+.cc-doc-chip .fname { font-weight: 500; color: #FFFFFF; }
+.cc-doc-chip .ftime { color: var(--ink-muted); font-size: 0.74rem; }
 
 /* ---- Main chat column ---- */
 .block-container {
@@ -105,18 +105,18 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; color: va
     margin: 0 auto;
 }
 
-.so-hero { text-align: center; padding: 3rem 1rem 1.5rem 1rem; }
-.so-hero-title {
+.cc-hero { text-align: center; padding: 3rem 1rem 1.5rem 1rem; }
+.cc-hero-title {
     font-family: 'Source Serif 4', serif;
     font-size: 2rem; font-weight: 600;
     color: #FFFFFF; margin-bottom: 0.6rem;
 }
-.so-hero-sub {
+.cc-hero-sub {
     color: var(--ink-muted); font-size: 0.98rem;
     max-width: 480px; margin: 0 auto; line-height: 1.5;
 }
 
-.so-disclaimer {
+.cc-disclaimer {
     background: var(--surface);
     border-left: 3px solid var(--amber);
     padding: 0.7rem 1rem;
@@ -179,7 +179,7 @@ div[data-testid="column"] .stButton > button:hover {
 [data-testid="stChatInput"] textarea { color: var(--ink) !important; }
 [data-testid="stChatInputSubmitButton"] { color: var(--accent); }
 
-.so-empty-doc {
+.cc-empty-doc {
     text-align: center;
     color: var(--ink-muted);
     padding: 2.5rem 1rem;
@@ -210,11 +210,11 @@ if "patient_memory" not in st.session_state:
 # =========================================================
 with st.sidebar:
     st.markdown("""
-    <div class="so-wordmark">Second <span>Opinion</span></div>
-    <div class="so-badge">● Offline · private to this device</div>
+    <div class="cc-wordmark">Care<span>Chat</span></div>
+    <div class="cc-badge">● Offline · private to this device</div>
     """, unsafe_allow_html=True)
 
-    st.markdown('<div class="so-section-label">Upload a document</div>', unsafe_allow_html=True)
+    st.markdown('<div class="cc-section-label">Upload a document</div>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
         "Upload", type=["pdf", "jpg", "jpeg", "png"], label_visibility="collapsed"
     )
@@ -245,9 +245,9 @@ with st.sidebar:
         st.write(st.session_state.patient_memory.facts)
 
     if st.session_state.doc_name:
-        st.markdown('<div class="so-section-label">Current document</div>', unsafe_allow_html=True)
+        st.markdown('<div class="cc-section-label">Current document</div>', unsafe_allow_html=True)
         st.markdown(f"""
-        <div class="so-doc-chip">
+        <div class="cc-doc-chip">
             <div class="fname">📄 {st.session_state.doc_name}</div>
             <div class="ftime">Loaded {st.session_state.doc_time}</div>
         </div>
@@ -262,7 +262,7 @@ with st.sidebar:
             st.session_state.chat_history = []
             st.rerun()
 
-    st.markdown('<div class="so-section-label">About</div>', unsafe_allow_html=True)
+    st.markdown('<div class="cc-section-label">About</div>', unsafe_allow_html=True)
     st.caption("Everything — the document, the reading, the conversation — stays on this device. Nothing is uploaded anywhere.")
 
 # =========================================================
@@ -276,31 +276,31 @@ def ask(question_text):
 
 if not st.session_state.extracted_text:
     st.markdown("""
-    <div class="so-hero">
-        <div class="so-hero-title">What's on your report?</div>
-        <div class="so-hero-sub">
+    <div class="cc-hero">
+        <div class="cc-hero-title">What's on your report?</div>
+        <div class="cc-hero-sub">
             Upload a lab report or prescription from the sidebar, and ask about it in plain language — privately, offline, on your own device.
         </div>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("""
-    <div class="so-disclaimer">
+    <div class="cc-disclaimer">
         This explains what your report says — it does not diagnose or recommend treatment. Always confirm anything important with your doctor.
     </div>
     """, unsafe_allow_html=True)
-    st.markdown('<div class="so-empty-doc">📄 &nbsp; Waiting for a document — use the sidebar to upload one.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="cc-empty-doc">📄 &nbsp; Waiting for a document — use the sidebar to upload one.</div>', unsafe_allow_html=True)
 
 else:
     st.markdown("""
-    <div class="so-disclaimer">
+    <div class="cc-disclaimer">
         This explains what your report says — it does not diagnose or recommend treatment. Always confirm anything important with your doctor.
     </div>
     """, unsafe_allow_html=True)
 
     if not st.session_state.chat_history:
         st.markdown(f"""
-        <div class="so-hero" style="padding-top:1rem; padding-bottom: 0.5rem;">
-            <div class="so-hero-title" style="font-size:1.4rem;">Ready — ask about {st.session_state.doc_name}</div>
+        <div class="cc-hero" style="padding-top:1rem; padding-bottom: 0.5rem;">
+            <div class="cc-hero-title" style="font-size:1.4rem;">Ready — ask about {st.session_state.doc_name}</div>
         </div>
         """, unsafe_allow_html=True)
 

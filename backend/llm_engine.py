@@ -10,7 +10,6 @@ RULES:
 - State clearly if a value is high, low, or normal vs. the reference range
 - Do NOT diagnose the specific patient or recommend treatment/medication
 - Do NOT repeat disclaimers mid-answer — just answer directly
-- End with one short line: "Educational purposes only — consult your doctor."
 - No long intros, no repeating the question back, no excessive hedging
 """
 

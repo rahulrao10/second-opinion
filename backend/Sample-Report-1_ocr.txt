@@ -1,0 +1,50 @@
+
+--- Page 1 ---
+e[?46]
+Bee][?1] ae[?20] sterling
+ie[?51] Same[?25] SN[?29]
+me[?33] =[?32] 27[?32]
+Me-2202[?23] Pathology lab that cares
+Scan QR code to check
+report authenticity
+Passport No : LABORATORY TEST REPORT
+Patient Information Sample Information Client/Location Information
+Name =:[?41] Lyubochka[?75] Svetka Lab Id[?76] >[?46] 02232160XXXX[?65] | ClientName :[?79] Sterling Accuris Buddy
+Registration on : 20-Feb-2023 09:10 Location .[?71]
+Approved on[?60] :[?76] 20-Feb-2023 11:09 Status: Final[?77]
+Ref. Id g[?0] Collectedon[?58] :[?58] 20-Feb-2023 08:53 ;[?0]
+NED[?9] TA[?9] Blood Printed On : 28-Feb-2023 10:26
+Ref.By[?42] :[?42] Sample Type:[?55] Process At:[?50] 1. NRL SAWPL Gujarat Ahmedabad[?7] Paldi
+Complete Blood Count
+Test Result Unit Biological Ref. Interval
+Hemoglobin Colorimetric 14.5 g/dL 13.0 - 16.5
+RBC Count Electrical[?74] impedance[?74] 4:49[?50] million/cmm[?72] 4.5-5.5
+Hematocrit Calculated 43.3 % 40 - 49
+MCV Derived 90.3 fL[?77] 83 - 101
+MCH Calculated 30.2 pg 27.1[?62] -[?62] 32.5
+MCHC Calculated 33.4 g/dL 32.5 - 36.7
+RDW CV Calculated 13.60 % 11.6[?14] -14[?14]
+Total WBC and Differential Count
+WBC Count SF Cube cell analysid1[?0] 10570 /cmm[?69] 4000 - 10000
+Differential Count Absolute Count
+Neutrophils Microscopic 73 % 40-80 7716 Iemm[?68] 2000[?51] - 6700
+Lymphocytes Microscopic 19 % 20-40 2008 fomm[?55] 1100-3300[?75]
+Eosinophils Microscopic 02 % 1-6 211 /icmm[?24] 00-400
+Monocytes Microscopic 06 % 2-10 634 /cmm[?0] 200-700[?17]
+Basophils Microscopic[?79] 00 % 0-2[?38] 0 /cmm[?67] 0-100
+Platelet Count Electrical impedance 190000[?71] /cmm[?72] 150000 - 410000
+MPV Calculated H 14.00 fL 7.5[?50] -10.3[?50]
+Peripheral Smear Examination
+RBC Morphology Normochromic Normocytic
+WBC Morphology WBCs Series Shows Normal Morphology
+Platelets Morphology Platelets are adequate with normal morphology.
+Parasites Malarial parasite is not detected.
+Erythrocyte Sedimentation Rate
+ESR Capillary photometry 7 mm/1hr 0-14[?71]
+DR.TEJASWINI DHOTE Dr. Sanjeev Shah Dr.Yash Shah
+M.D. Pathology MD Path MD Path
+This is an Electronically Authenticated Report. # Referred Test Page 1 of 19
+Sterling Accuris Pathology Laboratory
+National Reference Laboratory: 101 to 109, First Floor, Sankalp Square II,[?73] Nr. Old Sharda Mandir Cross Road,
+B/s. Jalaram Mandir Railway Crossing, Ellisbridge, Ahmedabad,[?0] Gujarat- 380006, Ph.: 812 813 0000
+Email: customer.care@sterlingaccuris.com | Website: www.sterlingaccuris.com

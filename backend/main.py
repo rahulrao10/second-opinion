@@ -6,7 +6,7 @@ import tempfile, os
 from ocr_engine import extract_text
 from llm_engine import explain_document, PatientMemory
 
-app = FastAPI(title="Second Opinion API")
+app = FastAPI(title="CareChat API")
 
 app.add_middleware(
     CORSMiddleware,
